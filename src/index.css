@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Noto+Sans+Arabic:wght@100..900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,500;1,600;1,700;1,800;1,900;1,1000&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+
+
+/* breadcrumbs */
+
+.breadcrumbs{
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.breadcrumbs > * {
+  display: inline-block;
+  margin-left:10px ;
+}
+
+.breadcrumbs .crumb:after{
+  content: '>';
+  margin-left: 10px;
+}
+
+.breadcrumbs .crumb:last-child:after {
+  display: none;
+}
+
+.breadcrumbs .crumb a{
+  color: #ddd;
+}
