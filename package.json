@@ -24,7 +24,7 @@
     "watch-css": "tailwindcss build -i ./src/index.css -o ./src/styles.css --watch",
     "eject": "react-scripts eject",
     "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
+    "deploy" : "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
