@@ -28,26 +28,6 @@ const db = getFirestore();
 const colRef = collection(db, "jobs");
 const auth = getAuth();
 
-getDocs(colRef)
-  .then((snapshot) => {
-    let jobs = [];
-    snapshot.docs.forEach((doc) => {
-      jobs.push({ ...doc.data(), id: doc.id });
-    });
-    console.log(jobs);
-  })
-  .catch((err) => {
-    console.log(err.message);
-  });
-
-onSnapshot(colRef, (snapshot) => {
-  let jobs = [];
-  snapshot.docs.forEach((doc) => {
-    jobs.push({ ...doc.data(), id: doc.id });
-  });
-  console.log(jobs);
-});
-
 export default getFirestore;
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

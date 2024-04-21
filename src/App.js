@@ -25,7 +25,7 @@ import EditProfile from "./pages/EditProfile";
 import EmployerDashboard from "./layouts/EmployerDashboard";
 import EmployerCareers from "./pages/careers/EmployerCareers";
 import ApplicationForm from "./pages/ApplicationForm";
-import Applicants from "./pages/Applicants";
+import Applicants from "./pages/applicants";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
