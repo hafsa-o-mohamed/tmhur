@@ -31,18 +31,19 @@ const Applicants = () => {
   const [isEmployer, setIsEmployer] = useState();
   const db = getFirestore();
   const colRef = collection(db, "jobs");
+  const usersRef = collection(db, "users");
 
   console.log(auth.currentUser && auth.currentUser.email);
   const history = useNavigate();
   onAuthStateChanged(auth, (user) => {
     console.log("user status changed", user);
     checkUserType();
+    resultsLoader();
   });
 
   const checkUserType = () => {
     let check = false;
 
-    const usersRef = collection(db, "users");
 
     const q = query(
       usersRef,
@@ -75,6 +76,8 @@ const Applicants = () => {
               snapshot.docs.forEach((p) => {
                 if (p.data().jobid === doc.id) {
                     j.push({ ...p.data(), id: doc.id });
+                    console.log({ ...p.data(), id: doc.id });
+
                 }
               });
             });
@@ -91,9 +94,9 @@ const Applicants = () => {
   return (
     <div>
       {isEmployer == true ? (
-        (aplicants.lengrh>=0)?
+        (j)?
 
-            j.map((aplicant) => {
+          
                 <div class="max-w-2xl mx-auto mt-24">
                   <div class="flex gap-3 bg-white border border-gray-300 rounded-xl overflow-hidden items-center justify-start">
                     <div class="relative w-32 h-32 flex-shrink-0">
@@ -105,7 +108,9 @@ const Applicants = () => {
                     </div>
       
                     <div class="flex flex-col gap-2 py-2">
-                      <p class="text-xl font-bold">Post title</p>
+                      <p class="text-xl font-bold">
+                        
+                      </p>
       
                       <p class="text-gray-500">
                         Description of your post/article, Description of your
@@ -131,8 +136,8 @@ const Applicants = () => {
                       </span>
                     </div>
                   </div>
-                </div>;
-              })
+                </div>
+              
         :
         <p>no results</p>
       ) : (
