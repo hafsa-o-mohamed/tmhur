@@ -16,8 +16,6 @@ const CareerFilters = () => {
       e.preventDefault()
           console.log('careers in home')
           const j = []
-      
-
           getDocs(colRef).then((snapshot)=>{
             snapshot.docs.forEach((doc)=>{
               console.log('****');
@@ -26,17 +24,12 @@ const CareerFilters = () => {
                 j.push({...doc.data(),id:doc.id})
       
               }
-      
             })
             console.log(j);
           }).catch (err=>{
             console.log(err.message)
           })
-          
-          //e.target.search.value
-          return <ResultCareers/>
-      
-      
+         return <ResultCareers/>
         }
     return ( 
         
