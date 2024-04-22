@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "webpack",
+"build": "react-scripts build",
     "test": "react-scripts test",
     "build-css": "tailwindcss build src/index.css -o public/style.css",
     "watch-css": "tailwindcss build -i ./src/index.css -o ./src/styles.css --watch",
